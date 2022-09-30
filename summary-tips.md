@@ -45,7 +45,7 @@ npm i --save-dev electron electron-forge
 ## Webpack
 
 ```sh
-npm i --save-dev @babel/core @babel/preset-env @babel/preset-react css-loader style-loader sass-loader sass webpack webpack-cli
+npm i --save-dev @babel/core @babel/preset-env @babel/preset-react css-loader style-loader sass-loader sass webpack webpack-cli ts-loader
 ```
 
 <b>webpack.config.js</b>
