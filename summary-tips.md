@@ -9,30 +9,16 @@ npm i --save-dev @types/react @types/react-dom react react-dom react-scripts @ty
 ```json
 {
   "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es6",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
-    "sourceMap": true
-  },
-  "include": [
-    "src",
-  ]
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "esModuleInterop": false
+  }
 }
 ```
 
@@ -56,9 +42,7 @@ const webpack = require('webpack');
 
 module.exports = {
     mode: 'none',
-    entry: {
-        app: path.join(__dirname, 'src', 'index.tsx')
-    },
+    entry: path.join(__dirname, './src/index.tsx'),
     target: 'web',
     resolve: {
         extensions: ['.ts', '.tsx', '.js']
@@ -69,17 +53,32 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: '/node_modules/'
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
+                },
+            },
         ],
     },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"production"',
-        })
+        }),
+        new webpack.SourceMapDevToolPlugin({
+            filename: "reactapp1.js.map"
+        }),
     ],
     output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
-    }
+        filename: 'reactapp1.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: "/"
+    },
 }
 ```
