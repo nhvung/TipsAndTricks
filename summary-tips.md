@@ -21,7 +21,7 @@ npm i --save-dev @types/react @types/react-dom react react-dom react-scripts @ty
   }
 }
 ```
-## index.tsx
+<b>index.tsx</b>
 
 ```ts
 import React from 'react';
