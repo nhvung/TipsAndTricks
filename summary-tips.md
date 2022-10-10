@@ -1,7 +1,7 @@
 ## React
 
 ```sh
-npm i --save-dev @types/react @types/react-dom react react-dom react-scripts @types/node react-router-dom
+npm i --save-dev @types/react @types/react-dom react react-dom react-scripts @types/node react-router-dom @types/uuid
 ```
 
 <b>tsconfig.json</b>
@@ -20,6 +20,26 @@ npm i --save-dev @types/react @types/react-dom react react-dom react-scripts @ty
     "esModuleInterop": false
   }
 }
+```
+## index.tsx
+
+```ts
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { v4 } from 'uuid';
+
+const divRootId = v4();
+let divRoot = document.getElementById(divRootId);
+if (!divRoot) {
+    divRoot = document.createElement("div");
+    divRoot.id = divRootId;
+    document.body.appendChild(divRoot);
+}
+
+const root = createRoot(divRoot);
+root.render(<React.StrictMode>
+
+</React.StrictMode>);
 ```
 
 ## Electron
