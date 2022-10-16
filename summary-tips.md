@@ -1,7 +1,7 @@
 ## React
 
 ```sh
-npm i -D @types/react @types/react-dom react react-dom react-scripts @types/node react-router-dom @types/uuid
+npm i -D @types/react @types/react-dom react react-dom react-scripts @types/node @types/uuid
 ```
 
 <b>tsconfig.json</b>
@@ -46,6 +46,27 @@ root.render(<React.StrictMode>
 
 ```sh
 npm i -D electron electron-forge
+```
+
+<b>main.js</b>
+
+```ts
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { v4 } from 'uuid';
+
+const divRootId = v4();
+let divRoot = document.getElementById(divRootId);
+if (!divRoot) {
+    divRoot = document.createElement("div");
+    divRoot.id = divRootId;
+    document.body.appendChild(divRoot);
+}
+
+const root = createRoot(divRoot);
+root.render(<React.StrictMode>
+
+</React.StrictMode>);
 ```
 
 ## Webpack
