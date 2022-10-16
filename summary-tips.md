@@ -1,7 +1,7 @@
 ## React
 
 ```sh
-npm i --save-dev @types/react @types/react-dom react react-dom react-scripts @types/node react-router-dom @types/uuid
+npm i -D @types/react @types/react-dom react react-dom react-scripts @types/node react-router-dom @types/uuid
 ```
 
 <b>tsconfig.json</b>
@@ -45,13 +45,13 @@ root.render(<React.StrictMode>
 ## Electron
 
 ```sh
-npm i --save-dev electron electron-forge
+npm i -D electron electron-forge
 ```
 
 ## Webpack
 
 ```sh
-npm i --save-dev @babel/core @babel/preset-env @babel/preset-react css-loader style-loader sass-loader sass webpack webpack-cli ts-loader
+npm i -D @babel/core @babel/preset-env @babel/preset-react css-loader style-loader sass-loader sass webpack webpack-cli ts-loader
 ```
 
 <b>webpack.config.js</b>
