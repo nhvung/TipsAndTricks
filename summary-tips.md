@@ -1,7 +1,7 @@
 ## React
 
 ```sh
-npm i -D @types/react @types/react-dom react react-dom react-scripts @types/node @types/uuid
+npm i -D @types/react @types/react-dom react react-dom react-scripts @types/node
 ```
 
 <b>tsconfig.json</b>
